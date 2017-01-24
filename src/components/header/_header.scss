@@ -1,0 +1,39 @@
+@import '../../scss/_vars.scss';
+
+.header {
+  position: relative;
+  background: $header-bg;
+  height: $header-height;
+
+  .title {
+    color: $header-color;
+    display: block;
+    margin-right: $actions-width;
+    line-height: $header-height;
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $actions-width;
+    height: 100%;
+  }
+
+  .btn {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 0;
+    color: $actions-color;
+    background: transparent;
+
+    &:hover {
+      color: lighten($actions-color, 20);
+    }
+  }
+}
