@@ -1,0 +1,13 @@
+@import '../../scss/vars.scss';
+
+.chat {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  max-width: 600px;
+  width: 100%;
+  width: $chat-width;
+  height: $chat-height;
+  border: 1px solid #DDD;
+  box-shadow: 0 0px 15px rgba(0,0,0, 0.2);
+}

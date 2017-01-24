@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../header/header';
 import Messages from '../messages/messages';
 import Submit from '../submit/submit';
+import './_chat.scss';
 
 
 class Chat extends Component {
@@ -15,7 +16,6 @@ class Chat extends Component {
   render() {
     return (
       <div className="chat">
-        <h1>Chat was loaded!</h1>
         <Header />
         <Messages />
         <Submit />
