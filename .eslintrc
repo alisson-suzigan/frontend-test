@@ -1,0 +1,15 @@
+{
+  "extends": "airbnb",
+
+  "env": {
+    "browser": true
+  },
+
+  "rules": {
+    "no-console": 1,
+    "eol-last": 0,
+    "one-var": [1, "always"],
+    "comma-dangle": [1, "never"],
+    "space-before-function-paren": [2, "never"],
+  }
+}
