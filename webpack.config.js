@@ -1,8 +1,8 @@
 const
-  webpack = require('webpack'),
   sourcePath = `${__dirname}/src`,
-  publicPath = `${__dirname}/public`;
-
+  publicPath = `${__dirname}/public`,
+  webpack = require('webpack'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: sourcePath,
@@ -56,7 +56,13 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }
+      },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
+      },
+
     ],
   },
 
@@ -64,7 +70,10 @@ module.exports = {
     // Remove vendor scripts from app.js
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: Infinity,
+      minChunks: Infinity
+    }),
+    new ExtractTextPlugin('css/app.css', {
+      allChunks: true
     })
   ]
 }
