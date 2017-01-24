@@ -62,7 +62,12 @@ module.exports = {
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!sass')
       },
-
+    ],
+    postLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['es3ify-loader'],
+      },
     ],
   },
 
