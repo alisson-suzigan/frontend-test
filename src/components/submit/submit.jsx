@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Submit = () => {
+function Submit() {
   return (
     <div>
       Submit loaded
     </div>
   );
-};
+}
 
 export default Submit;

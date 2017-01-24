@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Messages = () => {
+function Messages() {
   return (
     <div>
       Messages loaded
     </div>
   );
-};
+}
 
 export default Messages;

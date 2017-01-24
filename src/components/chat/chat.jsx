@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import Header from '../header/header'
-import Messages from '../messages/messages'
-import Submit from '../submit/submit'
+import React, { Component } from 'react';
+import Header from '../header/header';
+import Messages from '../messages/messages';
+import Submit from '../submit/submit';
 
 
 class Chat extends Component {
@@ -9,7 +9,7 @@ class Chat extends Component {
     super();
     this.state = {
       window: 'OPENED'
-    }
+    };
   }
 
   render() {
