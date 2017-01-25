@@ -6,6 +6,11 @@ import { USER_ID } from '../../constants';
 function Messages({ messages }) {
   const yourId = USER_ID;
 
+  function scrollToBottom() {
+    const el = document.querySelector('.message-list');
+    el.scrollTop = el.scrollHeight;
+  }
+
   function renderTalks() {
     let lastId = 0;
     const talks = messages.map((item) => {
@@ -19,6 +24,7 @@ function Messages({ messages }) {
 
   function renderTalkList() {
     const talks = messages ? renderTalks() : null;
+    setTimeout(scrollToBottom, 50);
     return talks;
   }
 

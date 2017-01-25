@@ -1,9 +1,10 @@
 @import '../../scss/vars.scss';
 @import '../../scss/mixins.scss';
 
-
 .message-list {
-  padding: 15px;
+  border-top: 15px solid white;
+  border-bottom: 15px solid white;
+  padding: 0 15px;
   max-height: $messages-height;
   overflow-y: auto;
 }
@@ -12,6 +13,13 @@
   position: relative;
   margin: $talk-margin;
   text-align: center;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .talk-image {
