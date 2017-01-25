@@ -6,7 +6,7 @@ function Talk(props) {
   function renderPicture() {
     return (
       <div className="talk-image">
-        <img src={`/images/user-${props.user.id}.jpg`} alt={props.user.name} />
+        <img src={`/static/images/user-${props.user.id}.jpg`} alt={props.user.name} />
       </div>
     );
   }
