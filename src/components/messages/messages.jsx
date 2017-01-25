@@ -1,16 +1,30 @@
 import React from 'react';
 import Talk from './talk';
-
+import './_messages.scss';
+import { USER_ID } from '../../constants';
 
 function Messages({ messages }) {
+  const yourId = USER_ID;
+
   function renderTalks() {
-    const talks = messages ? messages.map(item => <Talk key={item.id} {...item} />) : null;
+    let lastId = 0;
+    const talks = messages.map((item) => {
+      item.class = item.user.id === yourId ? 'right-side' : 'left-side';
+      item.usePicture = item.user.id !== lastId;
+      lastId = item.user.id;
+      return <Talk key={item.id} {...item} />;
+    });
+    return talks;
+  }
+
+  function renderTalkList() {
+    const talks = messages ? renderTalks() : null;
     return talks;
   }
 
   return (
-    <ul className="messages">
-      {renderTalks()}
+    <ul className="message-list">
+      {renderTalkList()}
     </ul>
   );
 }

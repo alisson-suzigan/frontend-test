@@ -1,0 +1,103 @@
+@import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
+
+
+.message-list {
+  padding: 15px;
+  max-height: $messages-height;
+  overflow-y: auto;
+}
+
+.message-item {
+  position: relative;
+  margin: $talk-margin;
+  text-align: center;
+}
+
+.talk-image {
+  position: absolute;
+  width: $talk-image-size;
+  height: $talk-image-size;
+  background: #AAA;
+}
+
+.talk-message {
+  position: relative;
+  // left: 30px;
+  display: inline-block;
+  width: $talk-box-width;
+  min-height: $talk-box-height;
+  margin: 0 10px;
+  padding: 5px;
+  background: $talk-box-color;
+  text-align: left;
+  color: $talk-text-color;
+
+  .arrow {
+    position: absolute;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: $talk-arrow-size solid transparent;
+    border-bottom: $talk-arrow-size solid transparent;
+
+  }
+
+  .info {
+    position: absolute;
+    bottom: 5px;
+    display: inline-block;
+    width: 120px;
+    font-size: 14px;
+  }
+  .name {
+    @include ellipsis();
+  }
+
+  .company,
+  .time {
+    display: block;
+  }
+
+  .message {
+    display: inline-block;
+    width: 290px;
+  }
+}
+
+
+// Ajsute talk side: image and message box
+.left-side {
+  .talk-image {
+    left: 0;
+  }
+  .talk-message {
+    left: 30px;
+  }
+  .arrow {
+    left: - $talk-arrow-size;
+    border-right: $talk-arrow-size solid $talk-box-color;
+  }
+  .info {
+    left: 5px;
+  }
+  .message {
+    margin-left: 120px;
+  }
+}
+
+.right-side {
+  .talk-image {
+    right: 0;
+  }
+  .talk-message {
+    right: 30px;
+  }
+  .arrow {
+    right: - $talk-arrow-size;
+    border-left: $talk-arrow-size solid $talk-box-color;
+  }
+  .info {
+    right: 5px;
+  }
+}

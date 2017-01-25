@@ -3,11 +3,32 @@ import React from 'react';
 
 function Talk(props) {
   // console.log('Talk props: ', props);
+  function renderPicture() {
+    return (
+      <div className="talk-image">
+        <img src={`/images/user-${props.user.id}.jpg`} alt={props.user.name} />
+      </div>
+    );
+  }
+
+  function getMessageTime(time) {
+    const
+      date = new Date(time),
+      messageTime = `Enviado as ${date.getHours()}:${date.getMinutes()}`;
+
+    return messageTime;
+  }
+
   return (
-    <li>
-      <div className="talk-image">{props.id}:</div>
+    <li className={`message-item ${props.class}`}>
+      {props.usePicture ? (renderPicture()) : null}
       <div className="talk-message">
-        <div className="info">info</div>
+        <div className="arrow" />
+        <div className="info">
+          <em className="name">{props.user.name}</em>
+          {props.company ? <strong className="company">{props.company.name}</strong> : null}
+          <small className="time">{getMessageTime(props.message.time)}</small>
+        </div>
         <div className="message">{props.message.message}</div>
       </div>
     </li>
@@ -15,7 +36,10 @@ function Talk(props) {
 }
 
 Talk.propTypes = {
-  id: React.PropTypes.number.isRequired,
+  class: React.PropTypes.string.isRequired,
+  usePicture: React.PropTypes.bool.isRequired,
+  user: React.PropTypes.shape().isRequired,
+  company: React.PropTypes.shape().isRequired,
   message: React.PropTypes.shape().isRequired
 };
 

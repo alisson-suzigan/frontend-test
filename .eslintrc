@@ -11,5 +11,6 @@
     "one-var": [1, "always"],
     "comma-dangle": [1, "never"],
     "space-before-function-paren": [2, "never"],
+    "no-param-reassign": ["error", { "props": false }]
   }
 }

@@ -20,10 +20,12 @@ class Chat extends Component {
   }
 
   loadMessages() {
-    this.setState({ status: WINDOW.OPENED });
     axios.get(CHAT_HISTORY_PATH)
       .then((response) => {
-        this.setState({ messages: response.data.talkMessages });
+        this.setState({
+          status: WINDOW.OPENED,
+          messages: response.data.talkMessages
+        });
       })
       .catch((error) => {
         this.setState({ error });

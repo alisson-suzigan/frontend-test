@@ -1,8 +1,6 @@
 // Chat
-// $chat-width: 600px;
-// $chat-height: 540px;
-$chat-width: 580px;
-$chat-height: 380px;
+$chat-width: 600px;
+$chat-height: 540px;
 
 
 // Header
@@ -13,3 +11,18 @@ $header-color: white;
 // Actions
 $actions-width: 80px;
 $actions-color: #80AED2;
+
+
+// Submit
+$submit-height: 100px;
+
+
+// Messages
+$messages-height: $chat-height - $header-height - $submit-height;
+$talk-text-color: #666;
+$talk-margin: 8px 0;
+$talk-arrow-size: 6px;
+$talk-image-size: 90px;
+$talk-box-width: 420px;
+$talk-box-height: 90px;
+$talk-box-color: #DDD;
