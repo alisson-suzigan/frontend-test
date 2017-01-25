@@ -10,9 +10,10 @@ import './_chat.scss';
 class Chat extends Component {
   constructor() {
     super();
-    this.state = { status: null, messages: null, error: null };
-    this.windowHandler = this.windowHandler.bind(this);
+    this.state = { status: null, message: null, error: null };
     this.loadMessages = this.loadMessages.bind(this);
+    this.windowHandler = this.windowHandler.bind(this);
+    this.messageHandler = this.messageHandler.bind(this);
   }
 
   componentDidMount() {
@@ -24,7 +25,7 @@ class Chat extends Component {
       .then((response) => {
         this.setState({
           status: WINDOW.OPENED,
-          messages: response.data.talkMessages
+          message: response.data.talkMessages
         });
       })
       .catch((error) => {
@@ -37,13 +38,20 @@ class Chat extends Component {
     this.setState({ status });
   }
 
+  messageHandler(data) {
+    const messages = this.state.message;
+    data.id = messages[messages.length - 1].id + 1;
+    messages.push(data);
+    this.setState({ message: messages });
+  }
+
   // Renders ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   renderOpened() {
     return (
       <div className="chat">
         <Header {...this.state} windowHandler={this.windowHandler} />
         <Messages {...this.state} />
-        <Submiter />
+        <Submiter messageHandler={this.messageHandler} />
       </div>
     );
   }
@@ -57,7 +65,6 @@ class Chat extends Component {
   }
 
   render() {
-    console.log('=== chat status:', this.state.status);
     let chat;
     switch (this.state.status) {
       case WINDOW.OPENED:

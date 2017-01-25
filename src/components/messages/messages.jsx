@@ -3,7 +3,7 @@ import Talk from './talk';
 import './_messages.scss';
 import { USER_ID } from '../../constants';
 
-function Messages({ messages }) {
+function Messages({ message }) {
   const yourId = USER_ID;
 
   function scrollToBottom() {
@@ -13,7 +13,7 @@ function Messages({ messages }) {
 
   function renderTalks() {
     let lastId = 0;
-    const talks = messages.map((item) => {
+    const talks = message.map((item) => {
       item.class = item.user.id === yourId ? 'right-side' : 'left-side';
       item.usePicture = item.user.id !== lastId;
       lastId = item.user.id;
@@ -23,7 +23,7 @@ function Messages({ messages }) {
   }
 
   function renderTalkList() {
-    const talks = messages ? renderTalks() : null;
+    const talks = message ? renderTalks() : null;
     setTimeout(scrollToBottom, 50);
     return talks;
   }
@@ -36,7 +36,7 @@ function Messages({ messages }) {
 }
 
 Messages.propTypes = {
-  messages: React.PropTypes.arrayOf(React.PropTypes.shape()).isRequired
+  message: React.PropTypes.arrayOf(React.PropTypes.shape()).isRequired
 };
 
 export default Messages;

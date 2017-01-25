@@ -4,8 +4,8 @@ import { WINDOW } from '../../constants';
 
 
 function Header({ status, windowHandler }) {
-  function onResizeClick(e) {
-    const action = e.currentTarget.getAttribute('data-action') === 'resize' ? WINDOW.OPENED : WINDOW.MINIMIZED;
+  function onResizeClick(event) {
+    const action = event.currentTarget.getAttribute('data-action') === 'resize' ? WINDOW.OPENED : WINDOW.MINIMIZED;
     windowHandler(action);
   }
 

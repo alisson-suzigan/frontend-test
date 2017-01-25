@@ -2,20 +2,16 @@
 $chat-width: 600px;
 $chat-height: 540px;
 
-
 // Header
 $header-height: 40px;
 $header-bg: #005DA4;
 $header-color: white;
-
 // Actions
 $actions-width: 80px;
 $actions-color: #80AED2;
 
-
 // Submit
 $submit-height: 100px;
-
 
 // Messages
 $messages-height: $chat-height - $header-height - $submit-height;
