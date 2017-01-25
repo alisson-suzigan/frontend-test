@@ -39,8 +39,12 @@ Talk.propTypes = {
   class: React.PropTypes.string.isRequired,
   usePicture: React.PropTypes.bool.isRequired,
   user: React.PropTypes.shape().isRequired,
-  company: React.PropTypes.shape().isRequired,
-  message: React.PropTypes.shape().isRequired
+  message: React.PropTypes.shape().isRequired,
+  company: React.PropTypes.shape()
+};
+
+Talk.defaultProps = {
+  company: {}
 };
 
 export default Talk;

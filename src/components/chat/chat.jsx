@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Header from '../header/header';
 import Messages from '../messages/messages';
-import Submit from '../submit/submit';
+import Submiter from '../submiter/submiter';
 import { CHAT_HISTORY_PATH, WINDOW } from '../../constants';
 import './_chat.scss';
 
@@ -43,7 +43,7 @@ class Chat extends Component {
       <div className="chat">
         <Header {...this.state} windowHandler={this.windowHandler} />
         <Messages {...this.state} />
-        <Submit />
+        <Submiter />
       </div>
     );
   }
