@@ -1,6 +1,6 @@
 const
   // Endpoint paths
-  CHAT_HISTORY_PATH = '',
+  CHAT_HISTORY_PATH = 'http://localhost:3000/json/talk.json',
 
   // Window status
   WINDOW = {
