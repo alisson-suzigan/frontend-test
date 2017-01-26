@@ -14,7 +14,9 @@ function Talk(props) {
   function getMessageTime(time) {
     const
       date = new Date(time),
-      messageTime = `Enviado as ${date.getHours()}:${date.getMinutes()}`;
+      hours = date.getHours() < 10 ? (`0${date.getHours()}`) : date.getHours(),
+      mins = date.getMinutes() < 10 ? (`0${date.getMinutes()}`) : date.getMinutes(),
+      messageTime = `Enviado as ${hours}:${mins}`;
 
     return messageTime;
   }
@@ -24,12 +26,12 @@ function Talk(props) {
       {props.usePicture ? (renderPicture()) : null}
       <div className="talk-message">
         <div className="arrow" />
+        <div className="message">{props.message.message}</div>
         <div className="info">
           <em className="name">{props.user.name}</em>
           {props.company ? <strong className="company">{props.company.name}</strong> : null}
           <small className="time">{getMessageTime(props.message.time)}</small>
         </div>
-        <div className="message">{props.message.message}</div>
       </div>
     </li>
   );
