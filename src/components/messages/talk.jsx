@@ -11,6 +11,14 @@ function Talk(props) {
     );
   }
 
+  function renderReadStatus() {
+    return (
+      <div className="read-status">
+        {props.message.alreadyRead ? <i className="icon-checked" /> : <i className="icon-clock" />}
+      </div>
+    );
+  }
+
   function getMessageTime(time) {
     const
       date = new Date(time),
@@ -32,6 +40,7 @@ function Talk(props) {
           {props.company ? <strong className="company">{props.company.name}</strong> : null}
           <small className="time">{getMessageTime(props.message.time)}</small>
         </div>
+        {props.class === 'right-side' ? renderReadStatus() : null}
       </div>
     </li>
   );

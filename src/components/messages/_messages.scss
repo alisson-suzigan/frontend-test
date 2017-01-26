@@ -59,7 +59,7 @@
     position: absolute;
     bottom: 5px;
     display: inline-block;
-    width: 120px;
+    width: 130px;
     font-size: 14px;
   }
   .name {
@@ -73,7 +73,8 @@
 
   .message {
     display: inline-block;
-    max-width: 290px;
+    max-width: 280px;
+    margin-bottom: 25px;
   }
 }
 
@@ -118,6 +119,16 @@
   }
   .message {
     margin-right: 120px;
+  }
+
+  .icon-checked {
+    color: $header-bg;
+  }
+  .icon-checked,
+  .icon-clock {
+    position: absolute;
+    bottom: 7px;
+    left: 5px;
   }
 }
 
