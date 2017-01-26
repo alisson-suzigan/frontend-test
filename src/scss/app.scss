@@ -18,3 +18,42 @@
 .clearfix {
     zoom: 1;
 }
+
+// Mock site structure
+.site-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.site-header {
+  height: 70px;
+  padding: 10px;
+  border-bottom: 1px solid #CCC;
+
+  .logo {
+    width: 100px;
+    height: 50px;
+    background: url('/static/images/logo-catho.png') no-repeat;
+    background-size: auto 100%;
+    font-size: 0;
+  }
+}
+
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 44px;
+  padding: 5px;
+  border-bottom: 1px solid #CCC;
+  background: #EEE;
+  border-top: 1px solid #005DA4;
+
+  .logo {
+    width: 100px;
+    height: 32px;
+    background: url('/static/images/logo-catho.png') no-repeat;
+    background-size: auto 100%;
+    font-size: 0;
+  }
+}
