@@ -37,7 +37,9 @@
     "start": "node app.js",
     "startNodemon": "nodemon app.js",
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build": "npm run copyStatics && webpack",
+    "build:prod": "npm run copyStatics && webpack -p",
+    "copyStatics": "cp -r ./src/static/ ./public/",
     "postinstall": "npm run build"
   }
 }
