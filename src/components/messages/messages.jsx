@@ -29,9 +29,11 @@ function Messages({ message }) {
   }
 
   return (
-    <ul className="message-list">
-      {renderTalkList()}
-    </ul>
+    <div className="message-wrap">
+      <ul className="message-list">
+        {renderTalkList()}
+      </ul>
+    </div>
   );
 }
 

@@ -15,7 +15,7 @@ function Header({ status, windowHandler }) {
 
   function renderMinimizeButton() {
     return (
-      <button data-action="minimize" className="btn" title="Minimizar" onClick={onResizeClick}>
+      <button data-action="minimize" className="btn minimize" title="Minimizar" onClick={onResizeClick}>
         <i className="icon-minimize" />
       </button>
     );
@@ -23,7 +23,7 @@ function Header({ status, windowHandler }) {
 
   function renderResizeButton() {
     return (
-      <button data-action="resize" className="btn" title="Restaurar" onClick={onResizeClick}>
+      <button data-action="resize" className="btn resize" title="Restaurar" onClick={onResizeClick}>
         <i className="icon-resize" />
       </button>
     );

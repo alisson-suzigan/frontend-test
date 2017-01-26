@@ -1,7 +1,10 @@
 @import '../../scss/_vars.scss';
+@import '../../scss/mixins.scss';
 
 .submiter {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height: 100px;
   padding: 15px;
   border-top: 1px solid #CCC;
@@ -40,24 +43,34 @@
 
     &.submit {
       color: white;
-      background: #4889BB;
+      background: $submit-send-color;
 
       &:hover {
-        background: darken(#4889BB, 10);
+        background: darken($submit-send-color, 10);
       }
     }
 
     &.clear {
       color: #666;
-      background: #DEDEDE;
+      background: $submit-clear-color;
 
       &:hover {
-        background: darken(#DEDEDE, 10);
+        background: darken($submit-clear-color, 10);
       }
     }
 
     .icon-trash {
       font-size: 23px;
     }
+  }
+}
+
+
+// Mobile settings
+@include breakpoint(mobile) {
+  .submiter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

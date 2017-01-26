@@ -1,3 +1,4 @@
+@import 'vars.scss';
 
 @mixin ellipsis ($max-width: 100%){
   display: block;
@@ -5,4 +6,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+
+@mixin breakpoint($point) {
+   @if $point == mobile {
+     @media (max-width: $mobile-width) {
+       @content;
+     }
+  }
 }

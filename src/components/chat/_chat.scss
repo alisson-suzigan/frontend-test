@@ -1,11 +1,10 @@
 @import '../../scss/vars.scss';
+@import '../../scss/mixins.scss';
 
 .chat {
   position: absolute;
   bottom: 0px;
   right: 20px;
-  max-width: 600px;
-  width: 100%;
   width: $chat-width;
   height: $chat-height;
   border: 1px solid #DDD;
@@ -13,5 +12,17 @@
 
   &.closed {
     height: $header-height;
+  }
+}
+
+
+// Mobile settings
+@include breakpoint(mobile) {
+  .chat {
+    width: auto;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 }

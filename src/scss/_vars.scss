@@ -12,13 +12,18 @@ $actions-color: #80AED2;
 
 // Submit
 $submit-height: 100px;
+$submit-send-color: #4889BB;
+$submit-clear-color: #DEDEDE;
 
 // Messages
 $messages-height: $chat-height - $header-height - $submit-height;
 $talk-text-color: #666;
 $talk-margin: 8px 0;
-$talk-arrow-size: 6px;
+$talk-arrow-size: 8px;
 $talk-image-size: 90px;
 $talk-box-width: 420px;
 $talk-box-height: 90px;
 $talk-box-color: #DDD;
+
+// Mobile breakpoint
+$mobile-width: 620px;
