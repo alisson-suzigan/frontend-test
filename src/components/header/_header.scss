@@ -28,12 +28,20 @@
     width: 30px;
     height: 30px;
     margin: 5px;
+    padding: 0;
     border: 0;
     color: $actions-color;
     background: transparent;
+    vertical-align: top;
 
     &:hover {
       color: lighten($actions-color, 20);
+    }
+  }
+  .icon-minimize {
+    font-size: 25px;
+    &:before {
+      margin: 0;
     }
   }
 }

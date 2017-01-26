@@ -59,7 +59,7 @@ class Submiter extends Component {
           title="Enviar mensagem"
           onClick={this.handleSubmit}
         >
-          ^<i className="icon" />
+          <i className="icon-plane" />
         </button>
 
         <button
@@ -69,7 +69,7 @@ class Submiter extends Component {
           title="Limpar mensagem"
           onClick={this.handleClear}
         >
-          X<i className="icon" />
+          <i className="icon-trash" />
         </button>
       </div>
     );
@@ -82,7 +82,8 @@ class Submiter extends Component {
           id="chat-text-message"
           placeholder="Digite aqui sua mensagem..."
           value={this.state.value}
-          onChange={this.handleMessage}
+          // onChange={this.handleMessage}
+          onKeyUp={this.handleMessage} // IE8 fix
         />
         {this.state.showActions ? this.renderActions() : null}
       </div>

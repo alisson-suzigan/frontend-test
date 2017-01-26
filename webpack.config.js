@@ -58,6 +58,11 @@ module.exports = {
         }
       },
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        exclude: /node_modules/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!sass')

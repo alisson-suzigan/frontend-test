@@ -36,6 +36,7 @@
     width: 34px;
     height: 34px;
     border: 0;
+    padding: 0;
 
     &.submit {
       color: white;
@@ -53,6 +54,10 @@
       &:hover {
         background: darken(#DEDEDE, 10);
       }
+    }
+
+    .icon-trash {
+      font-size: 23px;
     }
   }
 }

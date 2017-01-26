@@ -16,8 +16,7 @@ function Header({ status, windowHandler }) {
   function renderMinimizeButton() {
     return (
       <button data-action="minimize" className="btn" title="Minimizar" onClick={onResizeClick}>
-        _
-        <i className="icon" />
+        <i className="icon-minimize" />
       </button>
     );
   }
@@ -25,8 +24,7 @@ function Header({ status, windowHandler }) {
   function renderResizeButton() {
     return (
       <button data-action="resize" className="btn" title="Restaurar" onClick={onResizeClick}>
-        o
-        <i className="icon" />
+        <i className="icon-resize" />
       </button>
     );
   }
@@ -37,8 +35,7 @@ function Header({ status, windowHandler }) {
       <div className="actions">
         {status === WINDOW.OPENED ? renderMinimizeButton() : renderResizeButton()}
         <button data-action="close" className="btn close" title="Fechar" onClick={onCloseClick}>
-          x
-          <i className="icon" />
+          <i className="icon-close" />
         </button>
       </div>
     </header>
